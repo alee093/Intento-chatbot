@@ -55,6 +55,8 @@ generarPreguntasYRespuestas()
 function generarPreguntasYRespuestas(){
   const contenedor_preguntas = document.getElementById("container-preguntas")
   contenedor_preguntas.innerHTML = ""
+  const contenedor_chat = document.getElementById("container-chat")
+  contenedor_chat.innerHTML = ""
 
   // Función para crear la estructura HTML de una pregunta predeterminada
   function estructuraPreguntaPredeterminada(pregunta) {

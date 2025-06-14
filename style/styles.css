@@ -28,7 +28,8 @@ body{
 }
 .container-chatbox{
   max-width: 650px;
-  width: 650px;
+  width: 100%;
+  min-width: 0;
   margin: 20px 0;
   height: 500px;
   background-color: var(--azul-clarito-bot);
@@ -39,6 +40,7 @@ body{
 .container-chat{
   height: 100%;
   width: 400px;
+  min-width: 0;
   border-radius: 50px 0 0 50px;
   padding: 30px;
   overflow-y: scroll;
@@ -49,6 +51,7 @@ body{
 .container-pregunta-chat{
   width: 100%;
   max-width: 360px;
+  min-width: 0;
   display: flex;
   justify-content: end;
   margin-bottom: 10px;
@@ -64,6 +67,7 @@ body{
 .container-respuesta-chat{
   width: 100%;
   max-width: 360px;
+  min-width: 0;
   display: flex;
   justify-content: start;
   margin-bottom: 10px;
@@ -81,6 +85,7 @@ body{
   background-color: var(--azul-clarito);
   height: 100%;
   width: 250px;
+  min-width: 250px;
   border-radius: 0 50px 50px 0;
   padding: 30px;
 }
@@ -94,7 +99,7 @@ body{
 .pregunta{
   width: 100%;
   min-height: 30px;
-  padding: 5px 0;
+  padding: 5px 10px;
   margin-bottom: 10px;
   background-color: var(--azul-intermedio);
   border: none;
@@ -103,8 +108,9 @@ body{
 }
 
 .container-button-limpiar{
-  width: 650px;
+  width: 100%;
   max-width: 650px;
+  min-width: 0;
   display: flex;
   justify-content: space-between;
 }
@@ -132,4 +138,46 @@ body{
 .limpiar-chat:hover, .cambiar-idioma:hover{
   transform: scale(1.05);
   transition: all 0.1s ease-in-out;
+}
+
+
+@media (max-width: 600px){
+  .container-chatbox{
+    flex-direction: column;
+  }
+  .container-chat{
+    width: 100%;
+    border-radius: 50px 50px 0 0;
+    padding-bottom: 10px;
+  }
+  .container-pregunta-chat, .container-respuesta-chat{
+    max-width: none;
+  }
+  .container-preguntas{
+    width: 100%;
+    height: 115px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 20px;
+  }
+  .pregunta{
+    min-width: 150px;
+  }
+  .container-seccion-preguntas{
+    width: 100%;
+    min-width: 0;
+    height: 200px;
+    border-radius: 0 0 50px 50px;
+  }
+}
+
+@media(max-width: 460px){
+  .container-seccion-preguntas{
+    padding: 30px 10px;
+  }
+  .container-button-limpiar{
+    flex-direction: column;
+    gap: 10px;
+  }
 }
