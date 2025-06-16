@@ -2,6 +2,7 @@
 document.getElementById("limpiar-chat").addEventListener("click", function () {
   document.getElementById("container-chat").innerHTML = ""
 })
+
 // Obtener la fecha actual
 let fecha = new Date().toLocaleDateString([], {year: 'numeric', month: '2-digit', day: '2-digit'})
 // Obtener el día de la semana en ESPANOL
@@ -11,9 +12,10 @@ let dia_semana_es = dias_es[new Date().getDay()]
 const dias_en = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"]
 let dia_semana_en = dias_en[new Date().getDay()]
 
-
-
-
+// Funcion para cambiar el tiempo de espera de la respuesta del chatbot
+function tiempoEsperaRespuesta(){
+  return Math.random() * (1500 - 200) + 200
+}
 
 // Objeto que contiene las preguntas y respuestas predeterminadas ESPANOL
 const pyr_es = {
@@ -88,7 +90,24 @@ function generarPreguntasYRespuestas(){
           <p class="mensaje-pregunta">${pregunta}</p>
       </div>`
       contenedor_pregunta_chat.scrollTop = contenedor_pregunta_chat.scrollHeight
+      
+      // Mostrar los puntos de carga antes de mostrar la respuesta
+      const contenedor_puntos_chat = document.getElementById("container-chat")
+      contenedor_puntos_chat.innerHTML += `
+      <div class="container_puntos_chat" id="container_puntos_chat">
+        <span class="tres_puntos_chat uno"></span>
+        <span class="tres_puntos_chat dos"></span>
+        <span class="tres_puntos_chat tres"></span>
+      </div>
+      `
+      contenedor_puntos_chat.scrollTop = contenedor_puntos_chat.scrollHeight
+
       setTimeout(() => {
+        // Eliminar los puntos de carga y mostrar la respuesta
+        const eliminar_puntos = document.getElementById("container_puntos_chat")
+        eliminar_puntos.remove()
+        
+        // Crear un nuevo elemento de chat con la respuesta
         const contenedor_respuesta_chat = document.getElementById("container-chat");
         contenedor_respuesta_chat.innerHTML += `
         <div class="container-respuesta-chat">
@@ -96,7 +115,7 @@ function generarPreguntasYRespuestas(){
         </div>
         `
         contenedor_respuesta_chat.scrollTop = contenedor_respuesta_chat.scrollHeight
-        }, 500)
+        }, tiempoEsperaRespuesta())
     })
   })
 }

@@ -106,6 +106,43 @@ body{
   border-radius: 20px;
   box-shadow: 0 0 20px -13px var(--azul-oscuro);
 }
+.container_puntos_chat{
+  width: 100%;
+  max-width: 360px;
+  min-width: 0;
+  height: 30px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.tres_puntos_chat{
+  background-color: var(--azul-intermedio-bot);
+  box-shadow: 0 0 20px -2px var(--azul-oscuro);
+  width: 10px;
+  height: 10px;
+  border-radius: 20px;
+  margin-right: 7px;
+  animation: infinite linear crecer  0.8s;
+}
+.tres_puntos_chat:nth-child(2){
+  animation-delay: 0.1s;
+}
+.tres_puntos_chat:nth-child(3){
+  animation-delay: 0.2s;
+}
+@keyframes crecer {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 
 .container-button-limpiar{
   width: 100%;
