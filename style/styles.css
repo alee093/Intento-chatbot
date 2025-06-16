@@ -37,6 +37,8 @@ body{
   box-shadow: 0 0 20px -10px var(--azul-oscuro);
   display: flex;
 }
+
+/* parte del chat */
 .container-chat{
   height: 100%;
   width: 400px;
@@ -79,33 +81,6 @@ body{
   border-radius: 20px;
   box-shadow: 0 0 20px -10px var(--azul-oscuro);
 }
-
-
-.container-seccion-preguntas{
-  background-color: var(--azul-clarito);
-  height: 100%;
-  width: 250px;
-  min-width: 250px;
-  border-radius: 0 50px 50px 0;
-  padding: 30px;
-}
-.container-preguntas{
-  max-height: 440px;
-  overflow-y: scroll;
-}
-.container-preguntas::-webkit-scrollbar {
-  display: none;
-}
-.pregunta{
-  width: 100%;
-  min-height: 30px;
-  padding: 5px 10px;
-  margin-bottom: 10px;
-  background-color: var(--azul-intermedio);
-  border: none;
-  border-radius: 20px;
-  box-shadow: 0 0 20px -13px var(--azul-oscuro);
-}
 .container_puntos_chat{
   width: 100%;
   max-width: 360px;
@@ -143,7 +118,38 @@ body{
   }
 }
 
+/* donde estan los botones de las preguntas predeterminadas */
+.container-seccion-preguntas{
+  background-color: var(--azul-clarito);
+  height: 100%;
+  width: 250px;
+  min-width: 250px;
+  border-radius: 0 50px 50px 0;
+  padding: 30px;
+}
+.container-preguntas{
+  max-height: 440px;
+  overflow-y: scroll;
+}
+.container-preguntas::-webkit-scrollbar {
+  display: none;
+}
+.pregunta{
+  width: 100%;
+  min-height: 30px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  background-color: var(--azul-intermedio);
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 0 20px -13px var(--azul-oscuro);
+  cursor: pointer;
+}
+.pregunta:hover{
+  background-color: #afbde0aa;
+}
 
+/* css de los botones limpiar chat y cambiar idioma */
 .container-button-limpiar{
   width: 100%;
   max-width: 650px;
